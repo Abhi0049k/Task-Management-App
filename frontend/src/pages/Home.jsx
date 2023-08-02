@@ -47,6 +47,7 @@ const Home = () => {
             if (res.status>=200 && res.status<300) {
                 alert(res.data.msg);
                 fetchRender();
+                setTask({ task: '', desc: '' });
             }
         } catch (err) {
             console.log(err);
