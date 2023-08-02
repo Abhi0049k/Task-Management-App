@@ -21,7 +21,7 @@ app.get('*', (req, res) => {
     res.status(404).send({ "err": "404 Page Not Found" });
 })
 
-app.listen(process.env.port, () => {
+app.listen(process.env.PORT, () => {
     connection();
-    console.log('Server is running at port', process.env.port);
+    console.log('Server is running at port', process.env.PORT);
 })
