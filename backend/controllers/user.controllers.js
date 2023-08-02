@@ -7,8 +7,8 @@ require('dotenv').config();
 const register = async (req, res)=>{
     try{
         const data = req.body;
-        const userExists = await userModel.findOne({email: data.email});
-        if(userExists) return res.status(200).send({msg: 'User already exists'})
+        const userExists = await userModel.find({email: data.email});
+        if(userExists.length!==0) return res.status(200).send({msg: 'User already exists'})
         data.password = await bcrypt.hash(data.password, Number(process.env.SALT_ROUNDS));
         const newUser = new userModel(data);
         await newUser.save();
