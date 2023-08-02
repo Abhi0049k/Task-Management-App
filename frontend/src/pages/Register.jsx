@@ -22,7 +22,6 @@ const Register = () => {
         try{
             const res = await axios.post(baseServerURI, credentials);
             if(res.status>=200 && res.status<300){
-                console.log(res);
                 alert(res.data.msg);
                 navigate('/login');
             }else{

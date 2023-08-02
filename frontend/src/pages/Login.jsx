@@ -20,9 +20,7 @@ const Login = () => {
             return;
         }
         try{
-            console.log(credentials);
             const res = await axios.post(baseServerURI, credentials);
-            console.log(res);
             if(res.status>=200 && res.status<300){
                 alert(res.data.msg);
                 localStorage.setItem('username', res.data.username);
@@ -32,7 +30,6 @@ const Login = () => {
                 alert(res.data.msg);
             }
         }catch(err){
-            console.log(err);
             alert(err.response.data.msg);
         }
     }
