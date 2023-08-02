@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/user/login'
 
@@ -38,6 +38,9 @@ const Login = () => {
                     <input type="password" placeholder='Password' name='password' value={credentials.password} onChange={handleChange}/>
                     <input type="submit" value="Submit" />
                 </form>
+                <div className="link">
+                <Link to='/register'>Not a user?, Register</Link>
+                </div>
             </div>
         </div>
     )

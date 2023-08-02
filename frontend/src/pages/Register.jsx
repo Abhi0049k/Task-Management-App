@@ -42,6 +42,9 @@ const Register = () => {
                     <input type="password" placeholder='Password' name='password' value={credentials.password} onChange={handleChange} />
                     <input type="submit" value="Submit" />
                 </form>
+                <div className="link">
+                <Link to='/login'>Already a user?, Login</Link>
+                </div>
             </div>
         </div>
     )
