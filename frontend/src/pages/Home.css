@@ -1,0 +1,79 @@
+:root{
+    --skyBlue: #8ECAE6;
+    --greenBlue: #219EBC;
+    --prussianBlue: #023047;
+    --black: #000000;
+    --yellow: #FFB703;
+    --orange: #FB8500;
+    --white: #ffffff;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+main .newTaskContainer{
+    display: flex;
+    justify-content: center;
+}
+
+main .newTaskContainer form{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    gap: 1em;
+    padding: 1.5em;
+    border-radius: 0.5em;
+}
+
+main form input{
+    border: 1px solid silver;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 1em;
+    border-radius: 4px;
+}
+
+main form input[type='submit']{
+    width: 10em;
+    padding-left: 0;
+    background-color: var(--prussianBlue);
+    border: none;
+    color: var(--white);
+}
+
+main form input[type='submit']:hover{
+    background-color: var(--greenBlue);
+    cursor: pointer;
+}
+
+.taskContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 754px){
+    main .newTaskContainer{
+        width: 100%;
+    }
+    main .newTaskContainer form input{
+        width: 10em;
+    }
+}
+
+@media screen and (max-width: 556px){
+    main .newTaskContainer{
+        width: 100%;
+    }
+    main .newTaskContainer form{
+        flex-direction: column;
+    }
+    main .newTaskContainer form input{
+        width: 18em;
+    }
+}

@@ -1,0 +1,48 @@
+:root{
+    --skyBlue: #8ECAE6;
+    --greenBlue: #219EBC;
+    --prussianBlue: #023047;
+    --black: #000000;
+    --yellow: #FFB703;
+    --orange: #FB8500;
+    --white: #ffffff;
+}
+
+nav{
+    background-color: var(--prussianBlue);
+    display: flex;
+    color: var(--white);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3em;
+    height: 3em;
+}
+
+nav h1{
+    font-size: larger;
+}
+
+nav div {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+nav div h2{
+    font-size: large;
+}
+
+nav button{
+    background-color: var(--skyBlue);
+    font-size: large;
+    padding: 0.2em;
+    border-radius: 3px;
+    color: var(--prussianBlue);
+}
+
+@media screen and (max-width: 400px){
+    nav h2{
+        display: none;
+    }
+}
