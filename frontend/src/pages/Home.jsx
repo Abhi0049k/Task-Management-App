@@ -22,7 +22,7 @@ const Home = () => {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            if (res.statusText === 'OK') {
+            if (res.status>=200&&res.status<300) {
                 setList(res.data);
             }
         })();
