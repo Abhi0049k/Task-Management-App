@@ -8,25 +8,26 @@ import Task from '../components/Task';
 const Home = () => {
     const [name, setName] = useState(localStorage.getItem('username'));
     const [token, setToken] = useState(localStorage.getItem('token'));
-    const [update, setUpdate] = useState(0);
     const [task, setTask] = useState({ task: '', desc: '' });
     const [list, setList] = useState(null)
     const navigate = useNavigate();
     const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/todo'
     useEffect(() => {
-        if (name == null || name == null) navigate('/login');
-        (async () => {
-            let res = await axios.get(baseServerURI, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            if (res.status>=200&&res.status<300) {
-                setList(res.data);
+        if (name == null || token == null) navigate('/login');
+        fetchRender();
+    }, []);
+
+    const fetchRender = async () => {
+        let res = await axios.get(baseServerURI, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
-        })();
-    }, [update]);
+        });
+        if (res.status>=200&&res.status<300) {
+            setList(res.data);
+        }
+    }
 
     const handleChange = (evnt) => {
         const { name, value } = evnt.target;
@@ -43,9 +44,9 @@ const Home = () => {
                     'Authorization': `Bearer ${token}`
                 }
             })
-            if (res.statusText === 'Created') {
+            if (res.status>=200 && res.status<300) {
                 alert(res.data.msg);
-                setUpdate(update + 1);
+                fetchRender();
             }
         } catch (err) {
             console.log(err);
@@ -65,7 +66,7 @@ const Home = () => {
                 </div>
                 <div className="taskContainer">
                     {
-                        list && list.map((el, id) => <Task el={el} key={id} setUpdate={setUpdate} token={token} update={update} />)
+                        list && list.map((el, id) => <Task el={el} key={id} setUpdate={fetchRender} token={token} />)
                     }
                 </div>
             </main>

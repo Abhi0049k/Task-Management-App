@@ -4,7 +4,7 @@ import './Task.css';
 
 const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/todo';
 
-const Task = ({ el, setUpdate, token, update }) => {
+const Task = ({ el, setUpdate, token }) => {
     const handleChange = async (evnt)=>{
         const {name, checked} = evnt.target;
         const id = evnt.target.getAttribute('data-id');
@@ -32,7 +32,7 @@ const Task = ({ el, setUpdate, token, update }) => {
             }
         })
         if(res.status>=200 && res.status<300){
-            setUpdate(update+1);
+            setUpdate();
         }else{
             alert('Something went wrong');
         }
