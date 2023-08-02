@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/user/register'
 
