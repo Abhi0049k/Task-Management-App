@@ -12,7 +12,7 @@ const Home = () => {
     const [task, setTask] = useState({ task: '', desc: '' });
     const [list, setList] = useState(null)
     const navigate = useNavigate();
-    const baseServerURI = 'http://localhost:8998/todo'
+    const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/todo'
     useEffect(() => {
         if (name == null || name == null) navigate('/login');
         (async () => {

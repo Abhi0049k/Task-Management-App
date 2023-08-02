@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
-const baseServerURI = 'http://localhost:8998/user/login'
+const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/user/login'
 
 const Login = () => {
     const [credentials, setCredentials] = useState({email: '', password: ''});

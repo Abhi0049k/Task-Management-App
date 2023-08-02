@@ -43,3 +43,16 @@
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 400px){
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .formContainer form input{
+        width: 14em;
+    }
+}
