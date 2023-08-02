@@ -21,8 +21,8 @@ const register = async (req, res)=>{
 const login = async(req, res)=>{
     try{
         const {email, password} = req.body;
-        const user = await userModel.findOne({email});
-        if(!user) return res.status(400).send({msg: 'User Not Found!!!'})
+        const user = await userModel.find({email});
+        if(user.length===0) return res.status(400).send({msg: 'User Not Found!!!'})
         const id = user._id;
         result = await bcrypt.compare(password, user.password);
         if(result) return res.status(200).send({msg: 'Login Successfully', username: user.name, token: jwt.sign({id, email}, process.env.SECRET_KEY, {expiresIn: '7h'})});

@@ -6,14 +6,14 @@ import axios from 'axios';
 import Task from '../components/Task';
 
 const Home = () => {
-    const [name, setName] = useState(localStorage.getItem('username'));
-    const [token, setToken] = useState(localStorage.getItem('token'));
+    const [name, setName] = useState(localStorage.getItem('username') || '');
+    const [token, setToken] = useState(localStorage.getItem('token') || '');
     const [task, setTask] = useState({ task: '', desc: '' });
     const [list, setList] = useState(null)
     const navigate = useNavigate();
     const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/todo'
     useEffect(() => {
-        if (name == null || token == null) navigate('/login');
+        if (name == '' || token == '') navigate('/login');
         fetchRender();
     }, []);
 
