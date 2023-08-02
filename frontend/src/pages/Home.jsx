@@ -11,7 +11,7 @@ const Home = () => {
     const [task, setTask] = useState({ task: '', desc: '' });
     const [list, setList] = useState(null)
     const navigate = useNavigate();
-    const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/todo'
+    const baseServerURI = 'https://taskmanagementapp-ymtg.onrender.com/todo'
     useEffect(() => {
         if (name == '' || token == '') navigate('/login');
         fetchRender();

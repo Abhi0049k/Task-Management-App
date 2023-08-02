@@ -12,9 +12,9 @@ const register = async (req, res)=>{
         data.password = await bcrypt.hash(data.password, Number(process.env.SALT_ROUNDS));
         const newUser = new userModel(data);
         await newUser.save();
-        res.send({"Msg": "New User added"});
+        res.send({msg: "New User added"});
     }catch(err){
-        res.status(400).send({"err": err.message});
+        res.status(400).send({msg: err.message});
     }
 }
 
@@ -24,12 +24,11 @@ const login = async(req, res)=>{
         const user = await userModel.find({email});
         if(user.length===0) return res.status(400).send({msg: 'User Not Found!!!'})
         const id = user._id;
-        result = await bcrypt.compare(password, user.password);
-        if(result) return res.status(200).send({msg: 'Login Successfully', username: user.name, token: jwt.sign({id, email}, process.env.SECRET_KEY, {expiresIn: '7h'})});
+        result = await bcrypt.compare(password, user[0].password);
+        if(result) return res.status(200).send({msg: 'Login Successfully', username: user[0].name, token: jwt.sign({id, email}, process.env.SECRET_KEY, {expiresIn: '7h'})});
         else return res.status(400).send({msg: 'Wrong Credentials'});
     }catch(err){
-        console.log(err.message);
-        res.status(400).send('Something went wrong');
+        res.status(400).send({msg: err.message});
     }
 }
 

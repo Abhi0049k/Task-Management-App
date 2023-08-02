@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 
-const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/user/logout';
+const baseServerURI = 'https://taskmanagementapp-ymtg.onrender.com/user/logout';
 
 const Navbar = ({name, token}) => {
     const navigate = useNavigate();

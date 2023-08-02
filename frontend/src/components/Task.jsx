@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './Task.css';
 
-const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/todo';
+const baseServerURI = 'https://taskmanagementapp-ymtg.onrender.com/todo';
 
 const Task = ({ el, setUpdate, token }) => {
     const handleChange = async (evnt)=>{

@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Login.css';
 import { useNavigate, Link } from 'react-router-dom';
 
-const baseServerURI = 'https://zealous-wasp-hospital-gown.cyclic.cloud/user/register'
+const baseServerURI = 'https://taskmanagementapp-ymtg.onrender.com/user/register'
 
 const Register = () => {
     const [credentials, setCredentials] = useState({name: '', email: '', password: ''});
@@ -22,6 +22,7 @@ const Register = () => {
         try{
             const res = await axios.post(baseServerURI, credentials);
             if(res.status>=200 && res.status<300){
+                console.log(res);
                 alert(res.data.msg);
                 navigate('/login');
             }else{
@@ -43,7 +44,7 @@ const Register = () => {
                     <input type="submit" value="Submit" />
                 </form>
                 <div className="link">
-                <Link to='/login'>Already a user?, Login</Link>
+                <Link to='/login'>Already a user? Login</Link>
                 </div>
             </div>
         </div>
