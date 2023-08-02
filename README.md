@@ -1,7 +1,7 @@
 
 # Task Management App
 
-Task Management App is a Application which helps the user to manage his/her tasks and increase their productivity.
+Task Management App is an Application which helps the user to manage his/her tasks and increase their productivity.
 
 
 ## Contributing
@@ -11,9 +11,9 @@ This is an individual project built within a span of 1 day.
 
 ## Deployment
 
-Backend is deployed on Cyclic:  [Deployed Link](https://zealous-wasp-hospital-gown.cyclic.cloud/)
+Backend is deployed on Cyclic:  [Deployed Link](https://taskmanagementapp-ymtg.onrender.com/)
 
-Frontend is deployed on Netlify: [Deployed Link](https://steady-cajeta-abb356.netlify.app/)
+Frontend is deployed on Netlify: [Deployed Link](https://guileless-cobbler-8ed7bb.netlify.app/)
 ## Features
 
 - Create Tasks
