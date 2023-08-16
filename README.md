@@ -11,7 +11,7 @@ This is an individual project built within a span of 1 day.
 
 ## Deployment
 
-Backend is deployed on Cyclic:  [Deployed Link](https://taskmanagementapp-ymtg.onrender.com/)
+Backend is deployed on Render:  [Deployed Link](https://taskmanagementapp-ymtg.onrender.com/)
 
 Frontend is deployed on Netlify: [Deployed Link](https://guileless-cobbler-8ed7bb.netlify.app/)
 ## Features
